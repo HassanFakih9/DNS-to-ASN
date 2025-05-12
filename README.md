@@ -1,6 +1,9 @@
 # Domain-to-ASN Filter & VPN Policy Cleaner
 
-This utility resolves a list of domains, identifies their ASN (Autonomous System Number), and filters out domains already handled by a VPN policy. It generates clean CSVs and a bash script to remove handled domains from Asus-Merlin's `domain_vpn_routing.sh`.
+This utility resolves a list of domains, identifies their ASN (Autonomous System
+Number), and filters out domains already handled by a VPN policy. It generates
+clean CSVs and a bash script to remove handled domains from Asus-Merlin's
+`domain_vpn_routing.sh`.
 
 ---
 
@@ -25,7 +28,8 @@ This utility resolves a list of domains, identifies their ASN (Autonomous System
 python script.py policy_{POLICY_NAME}_domainlist handled_asns.txt
 ```
 
-### Example:
+### Example
+
 ```bash
 python script.py policy_Streaming_domainlist handled_asns.txt
 ```
@@ -34,12 +38,12 @@ python script.py policy_Streaming_domainlist handled_asns.txt
 
 ## 📦 Outputs
 
-| File                     | Description                                 |
-|--------------------------|---------------------------------------------|
-| `Streaming_asn_results.csv` | Domains not yet routed via known ASNs       |
-| `Streaming_skipped.csv`     | Domains that match handled ASNs             |
-| `Streaming_errors.log`      | DNS or ASN lookup errors                    |
-| `remove_Streaming.sh`       | Bash script to run deletedomain per domain  |
+| File                        | Description                                |
+| --------------------------- | ------------------------------------------ |
+| `Streaming_asn_results.csv` | Domains not yet routed via known ASNs      |
+| `Streaming_skipped.csv`     | Domains that match handled ASNs            |
+| `Streaming_errors.log`      | DNS or ASN lookup errors                   |
+| `remove_Streaming.sh`       | Bash script to run deletedomain per domain |
 
 ---
 
@@ -48,18 +52,21 @@ python script.py policy_Streaming_domainlist handled_asns.txt
 This project uses Python 3.12.6 with `pyenv` and a virtual environment:
 
 ### 1. Install Python via pyenv
+
 ```bash
 pyenv install 3.12.6
 pyenv local 3.12.6
 ```
 
 ### 2. Create and activate a virtual environment
+
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
 ### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -68,7 +75,8 @@ pip install -r requirements.txt
 
 ## 🛡️ Intended Use
 
-Helps manage and optimize domain-level VPN routing on Asus-Merlin firmware using [domain_vpn_routing.sh](https://github.com/Ranger802004/asusmerlin/blob/main/domain_vpn_routing/domain_vpn_routing-beta.sh).
+Helps manage and optimize domain-level VPN routing on Asus-Merlin firmware using
+[domain_vpn_routing.sh](https://github.com/Ranger802004/asusmerlin/tree/main/domain_vpn_routing).
 
 ---
 
