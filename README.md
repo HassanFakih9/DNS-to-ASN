@@ -36,6 +36,23 @@ python script.py policy_Streaming_domainlist handled_asns.txt
 
 ---
 
+## 📁 handled_asns.txt Format
+
+The `handled_asns.txt` file should contain **one ASN per line**, without the
+`AS` prefix. These are the ASNs you've already configured for VPN routing.
+
+### handled_asns.txt Example
+
+```text
+13335
+16509
+14618
+```
+
+You can find these ASNs in your router’s policy config, or by looking up existing routes.
+
+---
+
 ## 📦 Outputs
 
 | File                        | Description                                |
