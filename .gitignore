@@ -1,2 +1,7 @@
+venv/
+
+*.sh
 *.csv
+*.log
 policy_*_domainlist
+handled_asns.txt
