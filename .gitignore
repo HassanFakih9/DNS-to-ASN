@@ -4,4 +4,4 @@ venv/
 *.csv
 *.log
 policy_*_domainlist
-handled_asns.txt
+asn.conf

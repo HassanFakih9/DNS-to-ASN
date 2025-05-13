@@ -41,9 +41,13 @@ skipped_file = f"{policy_name}_skipped.csv"
 error_log = f"{policy_name}_errors.log"
 bash_file = f"remove_{policy_name}.sh"
 
-# Load handled ASNs
+# Load handled ASNs from asn.conf format: AS#####|interface
 with open(asn_file, 'r') as f:
-    handled_asns = set(line.strip() for line in f if line.strip())
+    handled_asns = {
+        line.split('|')[0].replace('AS', '').strip()
+        for line in f
+        if line.strip() and line.startswith('AS')
+    }
 
 start_time = time.time()
 errors = []
